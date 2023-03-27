@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="farooq" id="1">
+        <insert tableName="application_configuration">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="BYPASS_SMS"/>
+            <column name="type" value="SMS"/>
+            <column name="description" value="Disable call to SMS Service "/>
+            <column name="value" value="Y"/>
+            <column name="enabled" valueBoolean="true"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>

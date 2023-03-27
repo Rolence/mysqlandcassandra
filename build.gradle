@@ -1,0 +1,59 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0-M1'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'io.ara'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-artemis'
+	implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.session:spring-session-core'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+	implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+	implementation 'com.google.code.gson:gson'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.0.1'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-activemq
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version: '2.7.10'
+
+	implementation 'jakarta.ws.rs:jakarta.ws.rs-api'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5',
+			// Uncomment the next line if you want to use RSASSA-PSS (PS256, PS384, PS512) algorithms:
+			//'org.bouncycastle:bcprov-jdk15on:1.70',
+			'io.jsonwebtoken:jjwt-jackson:0.11.5'
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+	implementation group: 'org.apache.commons', name: 'commons-lang3'
+	implementation group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '9.23'
+	implementation group: 'org.zalando', name: 'problem', version: '0.23.0'
+	implementation group: 'org.codehaus.jettison', name: 'jettison', version: '1.5.0'
+//	implementation 'org.apache.avro:avro'
+	implementation 'jakarta.ws.rs:jakarta.ws.rs-api'
+	implementation 'jakarta.jms:jakarta.jms-api'
+	implementation 'jakarta.management.j2ee:jakarta.management.j2ee-api'
+	implementation 'org.apache.commons:commons-lang3'
+//	implementation "io.sentry:sentry-spring:$sentrySpringVersion"
+	implementation "org.apache.activemq:activemq-broker:5.17.4"
+//	implementation 'io.github.resilience4j:resilience4j-spring-boot2'
+	implementation 'org.liquibase:liquibase-core'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

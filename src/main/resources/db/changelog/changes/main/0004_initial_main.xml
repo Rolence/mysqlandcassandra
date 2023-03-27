@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<!--    <changeSet id="1" author="ara">-->
+<!--        <update tableName="m_user">-->
+<!--            <column name="account_status" type="VARCHAR(64)"/>-->
+<!--            <column name="created_by" type="VARCHAR(256)"/>-->
+<!--            <column name="created_on" type="VARCHAR(256)"/>-->
+<!--        </update>-->
+<!--&lt;!&ndash;        <alterSequence sequenceName=""&ndash;&gt;-->
+<!--    </changeSet>-->
+    <changeSet author="ara" id="1">
+        <preConditions onFail="HALT">
+            <tableExists schemaName="cass" tableName="m_portfolio_command_source"/>
+        </preConditions>
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="idempotency_key" type="varchar(255)"/>-->
+<!--        </addColumn>-->
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="made_on_date_utc" type="DATETIME"/>-->
+<!--        </addColumn>-->
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="checked_on_date_utc" type="DATETIME"/>-->
+<!--        </addColumn>-->
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="status" type="BIGINT"/>-->
+<!--        </addColumn>-->
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="job_name" type="VARCHAR(500)"/>-->
+<!--        </addColumn>-->
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="result" type="VARCHAR(500)"/>-->
+<!--        </addColumn>-->
+<!--        <addColumn schemaName="cqrs" tableName="m_portfolio_command_source">-->
+<!--            <column name="result_status_code" type="BIGINT"/>-->
+<!--        </addColumn>-->
+    </changeSet>
+    <changeSet id="00007" author="ara">
+        <sqlFile path="data.sql" />
+    </changeSet>
+</databaseChangeLog>
